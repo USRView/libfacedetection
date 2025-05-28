@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 2.8.12)
 
 option(ENABLE_NEON "whether use neon, if use arm please set it on" OFF)
 option(ENABLE_AVX512 "use avx512" OFF)
-option(ENABLE_AVX2 "use avx2" ON)
+option(ENABLE_AVX2 "use avx2" OFF)
 option(DEMO "build the demo" OFF)
 option(USE_OPENMP "Use OpenMP" ON)
 
@@ -88,8 +88,8 @@ if(ENABLE_AVX512)
 endif()
 
 if(ENABLE_AVX2)
-	add_definitions(-D_ENABLE_AVX2)
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mavx2 -mfma")
+	#add_definitions(-D_ENABLE_AVX2)
+	#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mavx2 -mfma")
 endif()
 
 if(ENABLE_NEON)
